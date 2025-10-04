@@ -26,7 +26,7 @@ Schedlur is a SaaS platform designed exclusively for appointment scheduling betw
 ## 🌟 Why Schedlur Stands Out
 
 - **Business-Centric Design:** Built for service providers, agencies, clinics, salons, and more.
-- **Client-Focused Experience:** Easy booking without accounts or logins required.
+- **Client-Focused Experience:** Easy booking and managing of the appointments.
 - **Reduce No-Shows:** Automated reminders and confirmations.
 - **Insights & Analytics:** View appointment stats and client trends.
 - **Seamless Integration:** Works with websites, social media, and your workflow.
@@ -46,7 +46,7 @@ Schedlur is a SaaS platform designed exclusively for appointment scheduling betw
 
 - **Consulting Agencies:** Effortless client bookings.
 - **Beauty & Wellness:** Salons, spas, trainers, and more.
-- **Hair Saloons and Tattoo shops:** All services related to hair and tattoos
+- **Hair Saloons and Tattoo shops:** All services related to hair and tattoos.
 - **Education & Coaching:** Schedule sessions with students and clients.
 
 ---
