@@ -9,13 +9,13 @@ public class UserServiceImpl implements UserService {
     private UserRepository userRepository;
 
     @Override
-    public List<User> findByFirstName(String firstName) {
+    public List<User> findAllByFirstName(String firstName) {
         return userRepository.findAllByFirstName(firstName);
     }
 
     @Override
-    public List<User> findByLastName(String lastName) {
-        return List.of();
+    public List<User> findAllByLastName(String lastName) {
+        return userRepository.findAllByLastName(lastName);
     }
 
     @Override
