@@ -45,9 +45,8 @@ Schedlur is a SaaS platform designed exclusively for appointment scheduling betw
 ## 💼 Use Cases
 
 - **Consulting Agencies:** Effortless client bookings.
-- **Clinics & Healthcare:** Manage patient appointments securely.
 - **Beauty & Wellness:** Salons, spas, trainers, and more.
-- **Repair & Services:** Bookings for technicians and service calls.
+- **Hair Saloons and Tattoo shops:** All services related to hair and tattoos
 - **Education & Coaching:** Schedule sessions with students and clients.
 
 ---
