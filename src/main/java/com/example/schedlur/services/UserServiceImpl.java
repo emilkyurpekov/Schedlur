@@ -1,8 +1,7 @@
-package com.example.schedlur.ServiceImpl;
+package com.example.schedlur.services;
 
 import com.example.schedlur.models.User;
 import com.example.schedlur.repositories.UserRepository;
-import com.example.schedlur.services.UserService;
 
 import java.util.List;
 
