@@ -7,6 +7,9 @@ import java.util.List;
 
 public class UserServiceImpl implements UserService {
     private UserRepository userRepository;
+    public UserServiceImpl(UserRepository userRepository) {
+        this.userRepository = userRepository;
+    }
 
     @Override
     public List<User> findAllByFirstName(String firstName) {
@@ -29,11 +32,20 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public User save(User user) {
+    public User register(User user) {
+        if(userRepository.findByEmail(user.getEmail()) != null){
+            throw new IllegalArgumentException("Email already registered");
+        }
+
         return userRepository.save(user);
     }
 
     @Override
     public void delete(User user) {
+    }
+
+    @Override
+    public User updateUser(Long id, User updatedUser) {
+        return null;
     }
 }
