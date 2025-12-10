@@ -1,52 +1,80 @@
 import React from "react";
 
-const HomePage = ({ appName }) => {
+export default function HomePage() {
     return (
-        <div className="flex flex-col min-h-screen font-sans">
-            {/* Hero Section */}
-            <section className="bg-blue-600 text-white py-20 px-6 text-center">
-                <h1 className="text-4xl md:text-5xl font-bold mb-4">
-                    Manage Your Appointments Effortlessly
-                </h1>
-                <p className="text-lg md:text-xl mb-8">
-                    {appName} is the easiest way to schedule, track, and manage appointments online.
-                </p>
-                <div className="flex justify-center gap-4">
-                    <button className="bg-white text-blue-600 px-6 py-3 rounded font-semibold hover:bg-gray-100 transition">
-                        Get Started
-                    </button>
-                    <button className="border border-white px-6 py-3 rounded font-semibold hover:bg-white hover:text-blue-600 transition">
-                        Learn More
-                    </button>
-                </div>
-            </section>
+        <div style={styles.container}>
+            <header style={styles.header}>
+                <h1 style={styles.title}>Schedlur</h1>
+                <p style={styles.subtitle}>Лесно запазване на час за бизнеси и клиенти</p>
 
-            {/* Features Section */}
-            <section className="py-20 px-6 bg-gray-50 text-center">
-                <h2 className="text-3xl font-bold mb-12">Features</h2>
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    {[
-                        { title: "Easy Scheduling", desc: "Schedule appointments quickly and easily with our intuitive interface." },
-                        { title: "Notifications", desc: "Automatic email and SMS notifications to keep your clients on track." },
-                        { title: "Analytics", desc: "Track appointment trends and improve your workflow with detailed reports." }
-                    ].map((feature, idx) => (
-                        <div key={idx} className="bg-white p-6 rounded shadow hover:shadow-lg transition">
-                            <h3 className="font-semibold text-xl mb-2">{feature.title}</h3>
-                            <p>{feature.desc}</p>
-                        </div>
-                    ))}
+                <div style={styles.buttons}>
+                    <a href="/register" style={styles.btnPrimary}>Създай акаунт</a>
+                    <a href="/login" style={styles.btnSecondary}>Вход</a>
                 </div>
-            </section>
+            </header>
 
-            {/* Call-to-Action Section */}
-            <section className="py-20 px-6 bg-blue-600 text-white text-center">
-                <h2 className="text-3xl font-bold mb-4">Ready to streamline your appointments?</h2>
-                <button className="bg-white text-blue-600 px-8 py-3 rounded font-semibold hover:bg-gray-100 transition">
-                    Sign Up Now
-                </button>
+            <section style={styles.section}>
+                <h2 style={styles.sectionTitle}>Защо Schedlur?</h2>
+                <ul style={styles.features}>
+                    <li>✔ Опростено запазване на часове и насрочване на срещи</li>
+                    <li>✔ Бизнес анализи и табло за лесно управление на запазени часове</li>
+                    <li>✔ Удобни за клиента процеси и функционалности </li>
+                    <li>✔ Интеграция за Android, Google и iOS календар </li>
+                    <li>✔ Автоматично напомняне чрез СМС и имейл 24ч преди часа </li>
+                </ul>
             </section>
         </div>
     );
-};
+}
 
-export default HomePage;
+const styles = {
+    container: {
+        padding: "40px",
+        fontFamily: "Arial, sans-serif"
+    },
+    header: {
+        textAlign: "center",
+        marginBottom: "50px"
+    },
+    title: {
+        fontSize: "48px",
+        fontWeight: "bold",
+    },
+    subtitle: {
+        fontSize: "20px",
+        marginTop: "10px"
+    },
+    buttons: {
+        marginTop: "20px"
+    },
+    btnPrimary: {
+        padding: "12px 20px",
+        marginRight: "10px",
+        backgroundColor: "#007bff",
+        color: "#fff",
+        textDecoration: "none",
+        borderRadius: "6px",
+    },
+    btnSecondary: {
+        padding: "12px 20px",
+        backgroundColor: "#6c757d",
+        color: "#fff",
+        textDecoration: "none",
+        borderRadius: "6px",
+    },
+    section: {
+        maxWidth: "600px",
+        margin: "0 auto",
+        textAlign: "center"
+    },
+    sectionTitle: {
+        fontSize: "28px",
+        marginBottom: "20px"
+    },
+    features: {
+        listStyle: "none",
+        padding: 0,
+        fontSize: "18px",
+        lineHeight: "32px"
+    }
+};

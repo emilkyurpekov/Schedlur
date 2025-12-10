@@ -1,23 +1,12 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>Appointment SaaS</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Schedlur - Home</title>
 </head>
 <body>
-<!-- React mounts here -->
-<div id="root" data-app-name="MyAppointments"></div>
 
-<!-- Load compiled React JS -->
-<script th:src="@{/js/home.js}"></script>
+<div id="root"></div>
 
-<!-- Mount React after page load -->
-<script>
-    const rootEl = document.getElementById('root');
-    ReactDOM.render(
-        React.createElement(HomePage, { appName: rootEl.dataset.appName }),
-        rootEl
-    );
-</script>
+<script src="/js/home.js"></script>
 </body>
 </html>
