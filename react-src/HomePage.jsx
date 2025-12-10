@@ -50,7 +50,7 @@ const styles = {
     btnPrimary: {
         padding: "12px 20px",
         marginRight: "10px",
-        backgroundColor: "#007bff",
+        backgroundColor: "black",
         color: "#fff",
         textDecoration: "none",
         borderRadius: "6px",
@@ -65,7 +65,9 @@ const styles = {
     section: {
         maxWidth: "600px",
         margin: "0 auto",
-        textAlign: "center"
+        textAlign: "center",
+        textDecoration:"bold"
+
     },
     sectionTitle: {
         fontSize: "28px",
