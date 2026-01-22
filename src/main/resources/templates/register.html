@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Schedlur - Create Account</title>
+    <link rel="stylesheet" th:href="@{/css/register.css}">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<div class="auth-container">
+    <div class="auth-card">
+        <h1 class="auth-title">Създай акаунт</h1>
+        <p class="auth-subtitle">Присъедини се към Schedlur сега.</p>
+
+        <form th:action="@{/register}" th:object="${user}" method="POST" class="auth-form">
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="firstName">Име</label>
+                    <input type="text" id="firstName" th:field="*{firstName}" placeholder="Иван" required>
+                    <small th:if="${#fields.hasErrors('firstName')}" th:errors="*{firstName}" class="error-text"></small>
+                </div>
+
+                <div class="form-group">
+                    <label for="lastName">Фамилия</label>
+                    <input type="text" id="lastName" th:field="*{lastName}" placeholder="Иванов" required>
+                    <small th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}" class="error-text"></small>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="phoneNumber">Телефонен номер</label>
+                <input type="tel" id="phoneNumber" th:field="*{phoneNumber}" placeholder="088 123 4567" required>
+                <small th:if="${#fields.hasErrors('phoneNumber')}" th:errors="*{phoneNumber}" class="error-text"></small>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" th:field="*{email}" placeholder="ivan@example.com" required>
+                <small th:if="${#fields.hasErrors('email')}" th:errors="*{email}" class="error-text"></small>
+            </div>
+
+            <div class="form-group">
+                <label for="password">Парола</label>
+                <input type="password" id="password" th:field="*{password}" placeholder="********" required>
+                <small th:if="${#fields.hasErrors('password')}" th:errors="*{password}" class="error-text"></small>
+            </div>
+            <div class="form-group">
+                <label for="confirmPassword">Повтори парола</label>
+                <input type="password" id="confirmPassword" th:field="*{confirmPassword}" placeholder="********" required>
+
+                <small th:if="${#fields.hasErrors('confirmPassword')}"
+                       th:errors="*{confirmPassword}"
+                       class="error-text"></small>
+            </div>
+
+            <button type="submit" class="btnPrimary full-width">Регистрирай се</button>
+        </form>
+
+        <p class="auth-footer">
+            Вече си регистриран? <a href="/login">Влез от тук</a>
+        </p>
+    </div>
+</div>
+
+</body>
+</html>

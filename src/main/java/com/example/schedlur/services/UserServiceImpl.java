@@ -1,14 +1,37 @@
 package com.example.schedlur.services;
 
+import com.example.schedlur.dto.UserRegisterDTO;
 import com.example.schedlur.models.User;
 import com.example.schedlur.repositories.UserRepository;
-
+import org.springframework.security.crypto.password.PasswordEncoder; // Required for security
+import org.springframework.stereotype.Service;
 import java.util.List;
 
+@Service
 public class UserServiceImpl implements UserService {
-    private UserRepository userRepository;
-    public UserServiceImpl(UserRepository userRepository) {
+
+    private final UserRepository userRepository;
+    private final PasswordEncoder passwordEncoder;
+
+    public UserServiceImpl(UserRepository userRepository, PasswordEncoder passwordEncoder) {
         this.userRepository = userRepository;
+        this.passwordEncoder = passwordEncoder;
+    }
+
+    public User register(UserRegisterDTO dto) {
+        if (userRepository.findByEmail(dto.getEmail()) != null) {
+            throw new IllegalArgumentException("Email already registered");
+        }
+
+        User user = new User();
+        user.setFirstName(dto.getFirstName());
+        user.setLastName(dto.getLastName());
+        user.setEmail(dto.getEmail());
+        user.setPhoneNumber(dto.getPhoneNumber());
+
+        user.setPassword(passwordEncoder.encode(dto.getPassword()));
+
+        return userRepository.save(user);
     }
 
     @Override
@@ -28,20 +51,12 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public List<User> findAll() {
-        return userRepository.findAll() ;
-    }
-
-    @Override
-    public User register(User user) {
-        if(userRepository.findByEmail(user.getEmail()) != null){
-            throw new IllegalArgumentException("Email already registered");
-        }
-
-        return userRepository.save(user);
+        return userRepository.findAll();
     }
 
     @Override
     public void delete(User user) {
+        userRepository.delete(user);
     }
 
     @Override

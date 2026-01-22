@@ -1,0 +1,141 @@
+/* --- Variables (Match your Home Page) --- */
+:root {
+    --primary: #1e3a8a;       /* Dark Navy */
+    --primary-hover: #1e40af;
+    --black: #000000;
+    --white: #ffffff;
+    --bg-gray: #f1f5f9;
+    --text-main: #0f172a;
+    --error: #ef4444;         /* Red for errors */
+}
+
+body {
+    background-color: var(--bg-gray);
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Centers the card vertically */
+}
+
+/* --- The Card Container --- */
+.auth-card {
+    background: var(--white);
+    padding: 40px;
+    width: 100%;
+    max-width: 450px; /* Prevents it from getting too wide */
+
+    /* The "Neo-Brutalist" Look */
+    border: 2px solid var(--black);
+    box-shadow: 8px 8px 0px 0px var(--black);
+    border-radius: 12px;
+}
+
+/* --- Typography --- */
+.auth-title {
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--primary);
+    margin: 0 0 10px 0;
+    text-align: center;
+}
+
+.auth-subtitle {
+    color: #64748B;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+/* --- Form Elements --- */
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-row {
+    display: flex;
+    gap: 15px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: 700;
+    margin-bottom: 8px;
+    font-size: 0.9rem;
+    color: var(--text-main);
+}
+
+/* The Inputs - Boxy and Bold */
+input {
+    width: 100%;
+    padding: 12px;
+    font-size: 1rem;
+    border: 2px solid var(--black); /* Black border on inputs */
+    border-radius: 8px;
+    box-sizing: border-box; /* Ensures padding doesn't break layout */
+    transition: all 0.2s ease;
+    background-color: #f8fafc;
+}
+
+input:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 4px 4px 0px 0px rgba(30, 58, 138, 0.2); /* Subtle blue pop */
+    transform: translateY(-2px);
+}
+
+/* --- Buttons --- */
+.btnPrimary {
+    background-color: var(--primary);
+    color: var(--white);
+    font-weight: 700;
+    padding: 14px;
+    border: 2px solid var(--black);
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    box-shadow: 4px 4px 0px 0px var(--black);
+    transition: all 0.1s ease;
+}
+
+.btnPrimary:hover {
+    background-color: var(--primary-hover);
+    transform: translateY(-2px);
+    box-shadow: 6px 6px 0px 0px var(--black);
+}
+
+.btnPrimary:active {
+    transform: translate(2px, 2px);
+    box-shadow: 2px 2px 0px 0px var(--black);
+}
+
+.full-width {
+    width: 100%;
+    display: block;
+}
+
+/* --- Footer Links --- */
+.auth-footer {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 0.9rem;
+}
+
+.auth-footer a {
+    color: var(--primary);
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.auth-footer a:hover {
+    text-decoration: underline;
+}
+
+/* --- Error Text --- */
+.error-text {
+    color: var(--error);
+    font-size: 0.85rem;
+    font-weight: 600;
+    display: block;
+    margin-top: 5px;
+}
