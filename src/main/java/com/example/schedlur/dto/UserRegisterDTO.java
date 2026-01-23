@@ -23,14 +23,17 @@ public class UserRegisterDTO {
     @NotEmpty(message = "Phone number is required")
     private String phoneNumber;
 
-    @NotEmpty(message = "Email cannot be empty")
-    @Email(message = "Please enter a valid email address")
+    @NotEmpty(message = "Полето за имейл не може да е празно")
+    @Email(message = "Моля въведете валиден имейл адрес")
     private String email;
 
-    @NotEmpty(message = "Password cannot be empty")
-    @Size(min = 6, message = "Password must be at least 6 characters long")
+    @NotEmpty(message = "Полето за парола не може да бъде празно")
+    @Size(min = 8, message = "Паролата трябва да е дълга минимум 8 символа")
     private String password;
 
-    @NotEmpty(message = "Please confirm your password")
+    @NotEmpty(message = "Моля потвърдете паролата си")
     private String confirmPassword;
+
+    @NotEmpty(message = "Моля изберете тип акаунт")
+    private String userType;
 }

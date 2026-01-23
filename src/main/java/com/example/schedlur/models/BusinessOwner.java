@@ -22,6 +22,9 @@ public class BusinessOwner extends BaseEntity {
     private String email;
 
     @Column(nullable = false)
+    private String phoneNumber;
+
+    @Column(nullable = false)
     private String password;
 //one owner can have many businesses
     @OneToMany(mappedBy = "owner", cascade = CascadeType.ALL, orphanRemoval = true)
